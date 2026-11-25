@@ -1,0 +1,116 @@
+@import "tailwindcss";
+@import "@fontsource-variable/hanken-grotesk";
+@import "@fontsource-variable/literata";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  --font-sans: "Hanken Grotesk Variable", "Helvetica Neue", Arial, sans-serif;
+  --font-read: "Literata Variable", Georgia, "Times New Roman", serif;
+
+  --color-carta: var(--carta);
+  --color-foglio: var(--foglio);
+  --color-ink: var(--ink);
+  --color-mut: var(--mut);
+  --color-riga: var(--riga);
+  --color-blu: var(--blu);
+  --color-blu-soft: var(--blu-soft);
+  --color-su-blu: var(--su-blu);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-ko: var(--ko);
+  --color-ko-soft: var(--ko-soft);
+  --color-amb: var(--amb);
+  --color-amb-soft: var(--amb-soft);
+
+  --radius-foglio: 4px;
+  --radius-tasto: 8px;
+}
+
+:root {
+  color-scheme: light;
+  --carta: #f2f4f5;
+  --foglio: #ffffff;
+  --ink: #16202b;
+  --mut: #5b6875;
+  --riga: #cbd4dc;
+  --blu: #1f3fbf;
+  --blu-soft: #e3e8fa;
+  --su-blu: #ffffff;
+  --ok: #0f7b55;
+  --ok-soft: #ddf1e8;
+  --ko: #c2331f;
+  --ko-soft: #f9e2de;
+  --amb: #a86200;
+  --amb-soft: #f6ebd6;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --carta: #0f1419;
+  --foglio: #171e26;
+  --ink: #e6ebf0;
+  --mut: #93a1af;
+  --riga: #2a3541;
+  --blu: #7c9bff;
+  --blu-soft: #1d2a52;
+  --su-blu: #0b1020;
+  --ok: #4cc38a;
+  --ok-soft: #13352a;
+  --ko: #f0796a;
+  --ko-soft: #3e1d1b;
+  --amb: #e0a84a;
+  --amb-soft: #3a2c14;
+}
+
+html {
+  background: var(--carta);
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--carta);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  font-feature-settings: "tnum" 0;
+}
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+:focus-visible {
+  outline: 2px solid var(--blu);
+  outline-offset: 2px;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Il timbro dell'esito: cala sul foglio una volta sola */
+@keyframes timbro {
+  from {
+    opacity: 0;
+    transform: rotate(-7deg) scale(1.6);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-7deg) scale(1);
+  }
+}
+.timbro {
+  transform: rotate(-7deg);
+}
+.timbro-vivo {
+  animation: timbro 0.28s cubic-bezier(0.2, 0.9, 0.3, 1.1) 0.15s both;
+}
