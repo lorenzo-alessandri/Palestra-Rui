@@ -4,7 +4,7 @@ Web app gratuita per allenarsi alla prova di idoneità IVASS per intermediari as
 
 ![Schermata Oggi](docs/screenshot.png)
 
-**Demo:** https://USERNAME.github.io/palestra-rui/
+**Demo:** https://lorenzo-alessandri.github.io/Palestra-Rui/
 
 ## Cosa fa
 
