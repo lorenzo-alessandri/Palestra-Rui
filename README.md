@@ -1,6 +1,6 @@
 # Palestra RUI
 
-Web app gratuita per allenarsi alla prova di idoneità IVASS per intermediari assicurativi (iscrizione al RUI sez A/B), modulo assicurativo.
+Web app gratuita per allenarsi alla prova di idoneità IVASS per intermediari assicurativi (iscrizione al RUI sezione A/B), modulo assicurativo.
 
 ![Schermata Oggi](docs/screenshot.png)
 
